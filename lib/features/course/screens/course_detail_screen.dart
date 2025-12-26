@@ -1,5 +1,6 @@
 import 'package:celoe/core/constants.dart';
 import 'package:celoe/features/course/widgets/course_materials_view.dart';
+import 'package:celoe/features/course/widgets/assignments_quizzes_view.dart';
 import 'package:flutter/material.dart';
 
 class CourseDetailScreen extends StatelessWidget {
@@ -38,7 +39,7 @@ class CourseDetailScreen extends StatelessWidget {
         body: const TabBarView(
           children: [
             CourseMaterialsView(),
-            Center(child: Text("Fitur Tugas & Kuis Belum Tersedia")),
+            AssignmentsQuizzesView(),
           ],
         ),
       ),
