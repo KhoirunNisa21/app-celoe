@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import '../../../core/constants.dart';
 import 'home_screen.dart';
 
-import 'package:celoe/features/course/screens/my_classes_screen.dart'; // Import MyClassesScreen
+import 'package:celoe/features/course/screens/my_classes_screen.dart';
+import 'package:celoe/features/notification/screens/notification_screen.dart'; // Import NotificationScreen
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -16,8 +17,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
   final List<Widget> _screens = [
     const HomeScreen(),
-    const MyClassesScreen(), // Use MyClassesScreen here
-    const Center(child: Text('Notifikasi')), // Placeholder
+    const MyClassesScreen(),
+    const NotificationScreen(), // Use NotificationScreen here
   ];
 
   void _onItemTapped(int index) {
