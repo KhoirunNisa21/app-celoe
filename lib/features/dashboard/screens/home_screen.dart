@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../core/constants.dart';
 import '../widgets/class_progress_card.dart';
 import 'class_progress_screen.dart';
+import '../../profile/screens/profile_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -40,10 +41,18 @@ class _HeaderSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        CircleAvatar(
-          radius: 25,
-          backgroundColor: AppColors.grey,
-          child: Icon(Icons.person, color: AppColors.textSecondary),
+        GestureDetector(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ProfileScreen()),
+            );
+          },
+          child: CircleAvatar(
+            radius: 25,
+            backgroundColor: AppColors.grey,
+            child: Icon(Icons.person, color: AppColors.textSecondary),
+          ),
         ),
         const SizedBox(width: 16),
         Expanded(
