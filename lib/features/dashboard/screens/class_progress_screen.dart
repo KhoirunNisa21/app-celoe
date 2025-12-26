@@ -49,7 +49,7 @@ class ClassProgressScreen extends StatelessWidget {
         'subtitle': 'Dosen: TPR',
         'progress': 0.60,
         'label': '60%',
-        'image': null, // No image provided for this one
+        'image': 'assets/images/multimedia.jpg',
       },
     ];
 

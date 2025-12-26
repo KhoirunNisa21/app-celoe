@@ -42,7 +42,7 @@ class MyClassesScreen extends StatelessWidget {
         'semester': '2021/2',
         'code': 'D4SM-43-04',
         'lecturers': 'TPR',
-        'image': 'https://placehold.co/100x100/fff3e0/e65100.png?text=PMI',
+        'image': 'assets/images/multimedia.jpg',
       },
       {
         'title': 'PEMROGRAMAN PERANGKAT BERGERAK MULTIMEDIA', // Matches Mobile Prog
