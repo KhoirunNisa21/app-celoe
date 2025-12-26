@@ -9,18 +9,21 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          // Background Image (Building) - using a placeholder color/container for now
-          // In a real app, use Image.asset or NetworkImage
+          // Background Image (Campus Building)
           Container(
             height: MediaQuery.of(context).size.height * 0.45,
             decoration: const BoxDecoration(
-              color: Colors.grey, // Placeholder for building image
-              // image: DecorationImage(
-              //   image: AssetImage('assets/images/building.jpg'),
-              //   fit: BoxFit.cover,
-              // ),
+              image: DecorationImage(
+                image: AssetImage('assets/images/login_bg.jpg'),
+                fit: BoxFit.cover,
+              ),
             ),
-            child: const Center(child: Text("Building Image Placeholder", style: TextStyle(color: Colors.white))),
+          ),
+          
+          // Dark Overlay for readability (optional, but good for aesthetics)
+          Container(
+            height: MediaQuery.of(context).size.height * 0.45,
+            color: Colors.black.withOpacity(0.1),
           ),
           
           // White Curved Background
@@ -52,9 +55,13 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                child: const Center(
-                  // Placeholder for Telkom Logo
-                  child: Icon(Icons.school, size: 50, color: AppColors.primary),
+                child: Center(
+                  child: Image.asset(
+                    'assets/images/logo.png',
+                    width: 70,
+                    height: 70,
+                    fit: BoxFit.contain,
+                  ),
                 ),
               ),
             ),
