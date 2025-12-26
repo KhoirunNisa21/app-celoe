@@ -238,12 +238,14 @@ class _AcademicProgressSection extends StatelessWidget {
           subtitle: 'Dosen: Dr. Budi Santoso',
           progress: 0.89,
           progressLabel: '89%',
+          imagePath: 'assets/images/mobile_prog.jpg',
         ),
         const ClassProgressCard(
           title: 'Desain Antarmuka Pengguna',
           subtitle: 'Dosen: Siti Aminah, M.Kom',
           progress: 0.90,
           progressLabel: '90%',
+          imagePath: 'assets/images/ui_ux.jpg',
         ),
       ],
     );

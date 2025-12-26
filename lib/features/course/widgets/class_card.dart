@@ -51,21 +51,37 @@ class ClassCard extends StatelessWidget {
                 // Course Image
                 ClipRRect(
                   borderRadius: BorderRadius.circular(12),
-                  child: Image.network(
-                    imageUrl,
-                    width: 60,
-                    height: 60,
-                    fit: BoxFit.cover,
-                    errorBuilder: (context, error, stackTrace) {
-                      return Container(
-                        width: 60,
-                        height: 60,
-                        color: Colors.grey.shade200,
-                        child: Icon(Icons.image_not_supported,
-                            color: Colors.grey.shade400),
-                      );
-                    },
-                  ),
+                  child: imageUrl.startsWith('http')
+                      ? Image.network(
+                          imageUrl,
+                          width: 60,
+                          height: 60,
+                          fit: BoxFit.cover,
+                          errorBuilder: (context, error, stackTrace) {
+                            return Container(
+                              width: 60,
+                              height: 60,
+                              color: Colors.grey.shade200,
+                              child: Icon(Icons.image_not_supported,
+                                  color: Colors.grey.shade400),
+                            );
+                          },
+                        )
+                      : Image.asset(
+                          imageUrl,
+                          width: 60,
+                          height: 60,
+                          fit: BoxFit.cover,
+                          errorBuilder: (context, error, stackTrace) {
+                             return Container(
+                              width: 60,
+                              height: 60,
+                              color: Colors.grey.shade200,
+                              child: Icon(Icons.image_not_supported,
+                                  color: Colors.grey.shade400),
+                            );
+                          },
+                        ),
                 ),
                 const SizedBox(width: 16),
                 // Course Details

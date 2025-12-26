@@ -14,21 +14,21 @@ class MyClassesScreen extends StatelessWidget {
         'semester': '2021/2',
         'code': 'D4SM-41-GABI',
         'lecturers': 'ARS',
-        'image': 'https://placehold.co/100x100/e0f7fa/006064.png?text=BI',
+        'image': 'assets/images/english.jpg',
       },
       {
         'title': 'DESAIN ANTARMUKA & PENGALAMAN PENGGUNA',
         'semester': '2021/2',
         'code': 'D4SM-42-03',
         'lecturers': 'ADY',
-        'image': 'https://placehold.co/100x100/f3e5f5/4a148c.png?text=UI/UX',
+        'image': 'assets/images/ui_ux.jpg',
       },
       {
         'title': 'KEWARGANEGARAAN',
         'semester': '2021/2',
         'code': 'D4SM-41-GABI',
         'lecturers': 'BBO',
-        'image': 'https://placehold.co/100x100/ffebee/b71c1c.png?text=KWN',
+        'image': 'assets/images/kewarganegaraan.jpg',
       },
       {
         'title': 'OLAH RAGA',
@@ -45,18 +45,18 @@ class MyClassesScreen extends StatelessWidget {
         'image': 'https://placehold.co/100x100/fff3e0/e65100.png?text=PMI',
       },
       {
-        'title': 'PEMROGRAMAN PERANGKAT BERGERAK MULTIMEDIA',
+        'title': 'PEMROGRAMAN PERANGKAT BERGERAK MULTIMEDIA', // Matches Mobile Prog
         'semester': '2021/2',
         'code': 'D4SM-41-GABI',
         'lecturers': 'APJ',
-        'image': 'https://placehold.co/100x100/e3f2fd/0d47a1.png?text=Mobile',
+        'image': 'assets/images/mobile_prog.jpg',
       },
       {
         'title': 'SISTEM OPERASI',
         'semester': '2021/2',
         'code': 'D4SM-44-02',
         'lecturers': 'DDS',
-        'image': 'https://placehold.co/100x100/fce4ec/880e4f.png?text=OS',
+        'image': 'assets/images/os.jpg',
       },
     ];
 

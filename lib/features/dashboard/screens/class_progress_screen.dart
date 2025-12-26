@@ -14,36 +14,42 @@ class ClassProgressScreen extends StatelessWidget {
         'subtitle': 'Dosen: Dr. Budi Santoso',
         'progress': 0.89,
         'label': '89%',
+        'image': 'assets/images/mobile_prog.jpg',
       },
       {
         'title': 'Desain Antarmuka Pengguna',
         'subtitle': 'Dosen: Siti Aminah, M.Kom',
         'progress': 0.90,
         'label': '90%',
+        'image': 'assets/images/ui_ux.jpg',
       },
       {
         'title': 'Bahasa Inggris: Business',
         'subtitle': 'Dosen: ARS',
         'progress': 0.75,
         'label': '75%',
+        'image': 'assets/images/english.jpg',
       },
       {
         'title': 'Kewarganegaraan',
         'subtitle': 'Dosen: BBO',
         'progress': 1.0,
         'label': '100%',
+        'image': 'assets/images/kewarganegaraan.jpg',
       },
       {
         'title': 'Sistem Operasi',
         'subtitle': 'Dosen: DDS',
         'progress': 0.45,
         'label': '45%',
+        'image': 'assets/images/os.jpg',
       },
       {
         'title': 'Pemrograman Multimedia',
         'subtitle': 'Dosen: TPR',
         'progress': 0.60,
         'label': '60%',
+        'image': null, // No image provided for this one
       },
     ];
 
@@ -71,6 +77,7 @@ class ClassProgressScreen extends StatelessWidget {
             subtitle: item['subtitle'],
             progress: item['progress'],
             progressLabel: item['label'],
+            imagePath: item['image'],
           );
         },
       ),
