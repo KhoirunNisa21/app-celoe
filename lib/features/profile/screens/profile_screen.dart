@@ -32,13 +32,11 @@ class ProfileScreen extends StatelessWidget {
                     height: 100,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      color: AppColors.primary.withOpacity(0.1),
                       border: Border.all(color: AppColors.primary, width: 2),
-                    ),
-                    child: const Icon(
-                      Icons.person,
-                      size: 60,
-                      color: AppColors.primary,
+                      image: const DecorationImage(
+                        image: AssetImage('assets/images/profile_pic.jpg'),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                   const SizedBox(height: 16),

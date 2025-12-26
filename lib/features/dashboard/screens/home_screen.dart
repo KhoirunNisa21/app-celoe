@@ -48,10 +48,10 @@ class _HeaderSection extends StatelessWidget {
               MaterialPageRoute(builder: (context) => const ProfileScreen()),
             );
           },
-          child: CircleAvatar(
+          child: const CircleAvatar(
             radius: 25,
             backgroundColor: AppColors.grey,
-            child: Icon(Icons.person, color: AppColors.textSecondary),
+            backgroundImage: AssetImage('assets/images/profile_pic.jpg'),
           ),
         ),
         const SizedBox(width: 16),
