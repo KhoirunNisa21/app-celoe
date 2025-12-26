@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../core/constants.dart';
+import '../widgets/class_progress_card.dart';
+import 'class_progress_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -205,6 +207,8 @@ class _AnnouncementsSection extends StatelessWidget {
   }
 }
 
+
+
 class _AcademicProgressSection extends StatelessWidget {
   const _AcademicProgressSection();
 
@@ -213,74 +217,35 @@ class _AcademicProgressSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Progres Kelas (2021/2)', style: AppTextStyles.heading2),
-        const SizedBox(height: 12),
-        _buildProgressItem(
-          'Pemrograman Mobile',
-          'Dosen: Dr. Budi Santoso',
-          0.89,
-          '89%',
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text('Progres Kelas (2021/2)', style: AppTextStyles.heading2),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ClassProgressScreen()),
+                );
+              },
+              child: const Text('Lihat Semua'),
+            ),
+          ],
         ),
-        const SizedBox(height: 16),
-        _buildProgressItem(
-          'Desain Antarmuka Pengguna',
-          'Dosen: Siti Aminah, M.Kom',
-          0.90,
-          '90%',
+        // No SizedBox needed as TextButton has padding
+        const ClassProgressCard(
+          title: 'Pemrograman Mobile',
+          subtitle: 'Dosen: Dr. Budi Santoso',
+          progress: 0.89,
+          progressLabel: '89%',
+        ),
+        const ClassProgressCard(
+          title: 'Desain Antarmuka Pengguna',
+          subtitle: 'Dosen: Siti Aminah, M.Kom',
+          progress: 0.90,
+          progressLabel: '90%',
         ),
       ],
-    );
-  }
-
-  Widget _buildProgressItem(String title, String subtitle, double progress, String progressLabel) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: AppColors.grey.withOpacity(0.5)),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                child: Text(
-                  title,
-                  style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                ),
-              ),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                decoration: BoxDecoration(
-                  color: Colors.green.withOpacity(0.1),
-                  borderRadius: BorderRadius.circular(4),
-                ),
-                child: Text(
-                  progressLabel,
-                  style: const TextStyle(
-                    color: Colors.green,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 12,
-                  ),
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 4),
-          Text(subtitle, style: AppTextStyles.caption),
-          const SizedBox(height: 12),
-          LinearProgressIndicator(
-            value: progress,
-            backgroundColor: AppColors.grey,
-            valueColor: const AlwaysStoppedAnimation<Color>(Colors.green),
-            minHeight: 6,
-            borderRadius: BorderRadius.circular(3),
-          ),
-        ],
-      ),
     );
   }
 }

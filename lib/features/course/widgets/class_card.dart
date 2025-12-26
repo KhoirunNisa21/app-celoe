@@ -38,7 +38,11 @@ class ClassCard extends StatelessWidget {
         child: InkWell(
           borderRadius: BorderRadius.circular(16),
           onTap: () {
-            // Navigate to course details (to be implemented)
+            Navigator.pushNamed(
+              context,
+              '/course-detail',
+              arguments: title,
+            );
           },
           child: Padding(
             padding: const EdgeInsets.all(16.0),
