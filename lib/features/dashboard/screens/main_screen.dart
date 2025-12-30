@@ -1,6 +1,6 @@
-import 'package:celoe/core/constants.dart';
-import 'package:celoe/features/dashboard/screens/dashboard_screen.dart';
-import 'package:celoe/features/course/screens/course_list_screen.dart';
+import 'package:celoe/features/dashboard/screens/home_screen.dart';
+import 'package:celoe/features/course/screens/my_classes_screen.dart';
+import 'package:celoe/features/notification/screens/notification_screen.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {
@@ -14,10 +14,9 @@ class _MainScreenState extends State<MainScreen> {
   int _currentIndex = 0;
 
   final List<Widget> _screens = [
-    const DashboardScreen(),
-    const CourseListScreen(), // Placeholder for Course Screen
-    const Center(child: Text("Assignments")),
-    const Center(child: Text("Profile")),
+    const HomeScreen(),
+    const MyClassesScreen(),
+    const NotificationScreen(),
   ];
 
   @override
@@ -32,28 +31,23 @@ class _MainScreenState extends State<MainScreen> {
           });
         },
         type: BottomNavigationBarType.fixed,
-        selectedItemColor: AppColors.primary,
+        selectedItemColor: const Color(0xFFB71C1C),
         unselectedItemColor: Colors.grey,
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.dashboard_outlined),
-            activeIcon: Icon(Icons.dashboard),
-            label: 'Dashboard',
+            icon: Icon(Icons.home_outlined),
+            activeIcon: Icon(Icons.home),
+            label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.book_outlined),
-            activeIcon: Icon(Icons.book),
-            label: 'Courses',
+            icon: Icon(Icons.school_outlined),
+            activeIcon: Icon(Icons.school),
+            label: 'Kelas Saya',
           ),
-           BottomNavigationBarItem(
-            icon: Icon(Icons.assignment_outlined),
-            activeIcon: Icon(Icons.assignment),
-            label: 'Assignments',
-          ),
-           BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline),
-            activeIcon: Icon(Icons.person),
-            label: 'Profile',
+          BottomNavigationBarItem(
+            icon: Icon(Icons.notifications_outlined),
+            activeIcon: Icon(Icons.notifications),
+            label: 'Notifikasi',
           ),
         ],
       ),

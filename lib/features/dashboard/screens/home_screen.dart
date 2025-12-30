@@ -59,9 +59,9 @@ class _HeaderSection extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'Hallo, mahasiswa',
-                style: AppTextStyles.heading2.copyWith(fontSize: 16),
+              const Text(
+                'Hallo, Dandy Candra Pratama',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),
@@ -69,13 +69,14 @@ class _HeaderSection extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                 decoration: BoxDecoration(
-                  color: AppColors.primary.withOpacity(0.1),
+                  color: const Color(0xFFB71C1C).withOpacity(0.1),
                   borderRadius: BorderRadius.circular(4),
                 ),
-                child: Text(
+                child: const Text(
                   'MAHASISWA',
-                  style: AppTextStyles.caption.copyWith(
-                    color: AppColors.primary,
+                  style: TextStyle(
+                    color: Color(0xFFB71C1C),
+                    fontSize: 10,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -96,13 +97,16 @@ class _UpcomingTasksSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Tugas Yang Akan Datang', style: AppTextStyles.heading2),
+        const Text(
+          'Tugas Yang Akan Datang',
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        ),
         const SizedBox(height: 12),
         Container(
           width: double.infinity,
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
-            color: AppColors.primary, // Red highlight
+            color: const Color(0xFFB71C1C),
             borderRadius: BorderRadius.circular(12),
             boxShadow: [
               BoxShadow(
@@ -116,22 +120,22 @@ class _UpcomingTasksSection extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                  decoration: BoxDecoration(
                    color: Colors.white.withOpacity(0.2),
                    borderRadius: BorderRadius.circular(4),
                  ),
                  child: const Text(
                    'UID Android Mobile Game',
-                   style: TextStyle(color: Colors.white, fontSize: 12),
+                   style: TextStyle(color: Colors.white, fontSize: 11),
                  ),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 12),
               const Text(
-                'Tugas 01',
+                'Tugas 1',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 18,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -141,8 +145,8 @@ class _UpcomingTasksSection extends StatelessWidget {
                   const Icon(Icons.access_time, color: Colors.white, size: 16),
                   const SizedBox(width: 8),
                   const Text(
-                    'Jumat, 26 Februari, 23:59 WIB',
-                    style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
+                    'Kamis, 29 Februari, 23:59 WIB',
+                    style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500, fontSize: 12),
                   ),
                 ],
               ),
@@ -164,16 +168,22 @@ class _AnnouncementsSection extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('Pengumuman Terakhir', style: AppTextStyles.heading2),
+            const Text(
+              'Pengumuman Terakhir',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
             TextButton(
               onPressed: () {},
-              child: const Text('Lihat Semua'),
+              child: const Text('Lihat Semua', style: TextStyle(color: Color(0xFFB71C1C))),
             ),
           ],
         ),
         Card(
-          elevation: 2,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          elevation: 0,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+            side: BorderSide(color: Colors.grey.shade200),
+          ),
           child: Padding(
             padding: const EdgeInsets.all(16.0),
             child: Row(
@@ -185,24 +195,21 @@ class _AnnouncementsSection extends StatelessWidget {
                     color: Colors.blue.withOpacity(0.1),
                     shape: BoxShape.circle,
                   ),
-                  child: const Icon(Icons.info_outline, color: Colors.blue),
+                  child: const Icon(Icons.info_outline, color: Colors.blue, size: 20),
                 ),
                 const SizedBox(width: 16),
-                Expanded(
+                const Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
+                      Text(
                         'Maintenance Server',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                        ),
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
                       ),
-                      const SizedBox(height: 4),
+                      SizedBox(height: 4),
                       Text(
                         'Sistem akan mengalami pemeliharaan pada tanggal 27 Feb 2025 pukul 00:00 - 04:00 WIB.',
-                        style: AppTextStyles.caption.copyWith(height: 1.4),
+                        style: TextStyle(color: Colors.grey, fontSize: 12, height: 1.4),
                       ),
                     ],
                   ),
@@ -216,8 +223,6 @@ class _AnnouncementsSection extends StatelessWidget {
   }
 }
 
-
-
 class _AcademicProgressSection extends StatelessWidget {
   const _AcademicProgressSection();
 
@@ -229,19 +234,19 @@ class _AcademicProgressSection extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text('Progres Kelas (2021/2)', style: AppTextStyles.heading2),
+            const Text(
+              'Progres Kelas (2021/2)',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
             TextButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const ClassProgressScreen()),
-                );
+                // Navigate to MyClassesScreen (which is the second tab in MainScreen)
+                DefaultTabController.of(context).animateTo(1);
               },
-              child: const Text('Lihat Semua'),
+              child: const Text('Lihat Semua', style: TextStyle(color: Color(0xFFB71C1C))),
             ),
           ],
         ),
-        // No SizedBox needed as TextButton has padding
         const ClassProgressCard(
           title: 'Pemrograman Mobile',
           subtitle: 'Dosen: Dr. Budi Santoso',

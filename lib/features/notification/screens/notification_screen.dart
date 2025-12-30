@@ -1,46 +1,87 @@
 import 'package:flutter/material.dart';
-import '../widgets/notification_card.dart';
 
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Dummy Data matching the screenshot
     final List<Map<String, String>> notifications = [
       {
-        'title': 'Tugas 01 (UI/UX) mendekati tenggat',
-        'subtitle': 'Sisa waktu: 1 hari',
+        'text': 'Anda telah mengirimkan pengajuan tugas untuk [Laporan Akhir Assessment 2 (Tugas Besar)]',
+        'subtext': 'Senin, 14 Februari 2021',
+        'course': 'D63N-41-DAB1 (DAB)',
       },
       {
-        'title': 'Pengumuman: Info Maintenance Server',
-        'subtitle': 'Silakan cek detail pada halaman beranda.',
+        'text': 'Anda telah mengirimkan pengajuan tugas untuk [Laporan Akhir Assessment 2 (Tugas Besar)]',
+        'subtext': 'Senin, 14 Februari 2021',
+        'course': 'D63N-41-DAB1 (DAB)',
+      },
+      {
+        'text': 'Anda telah mengirimkan pengajuan tugas untuk [Laporan Akhir Assessment 2 (Tugas Besar)]',
+        'subtext': 'Senin, 14 Februari 2021',
+        'course': 'D63N-41-DAB1 (DAB)',
+      },
+      {
+        'text': 'Anda telah mengirimkan pengajuan tugas untuk [Laporan Akhir Assessment 2 (Tugas Besar)]',
+        'subtext': 'Senin, 14 Februari 2021',
+        'course': 'D63N-41-DAB1 (DAB)',
       },
     ];
 
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: () => Navigator.pop(context),
+        ),
         title: const Text(
           'Notifikasi',
           style: TextStyle(
             color: Colors.black,
+            fontSize: 16,
             fontWeight: FontWeight.bold,
           ),
         ),
         backgroundColor: Colors.white,
         elevation: 0,
-        centerTitle: false,
-        automaticallyImplyLeading: false, 
+        centerTitle: true,
       ),
-      body: ListView.builder(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      body: ListView.separated(
+        padding: const EdgeInsets.all(20),
         itemCount: notifications.length,
+        separatorBuilder: (context, index) => const Divider(height: 32),
         itemBuilder: (context, index) {
           final item = notifications[index];
-          return NotificationCard(
-            title: item['title']!,
-            subtitle: item['subtitle']!,
+          return Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Padding(
+                padding: EdgeInsets.only(top: 4.0),
+                child: Icon(Icons.description_outlined, size: 24, color: Colors.grey),
+              ),
+              const SizedBox(width: 16),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      item['text']!,
+                      style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      item['subtext']!,
+                      style: const TextStyle(fontSize: 11, color: Colors.grey),
+                    ),
+                    Text(
+                      item['course']!,
+                      style: const TextStyle(fontSize: 11, color: Colors.grey),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           );
         },
       ),
