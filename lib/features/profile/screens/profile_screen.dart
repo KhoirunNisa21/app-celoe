@@ -85,7 +85,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         ),
         const SizedBox(height: 16),
         const Text(
-          'DANDY CANDRA PRATAMA',
+          "khoirun nisa'",
           textAlign: TextAlign.center,
           style: TextStyle(
             color: Colors.white,
@@ -169,8 +169,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
         ),
         const SizedBox(height: 12),
-        _buildInfoItem('Email address', 'dandycandra36@telkomuniversity.ac.id'),
-        _buildInfoItem('Program Studi', 'D4 Teknologi Rekayasa Multimedia'),
+        _buildInfoItem('Email address', 'nisaalsevy@gmail.com'),
+        _buildInfoItem('Program Studi', 'S1 TEKNIK INFORMATIKA'),
         _buildInfoItem('Fakultas', 'FIT'),
         
         const SizedBox(height: 24),

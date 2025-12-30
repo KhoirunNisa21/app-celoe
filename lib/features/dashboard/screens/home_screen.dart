@@ -60,7 +60,7 @@ class _HeaderSection extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                'Hallo, Dandy Candra Pratama',
+                "Hallo, khoirun nisa'",
                 style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
